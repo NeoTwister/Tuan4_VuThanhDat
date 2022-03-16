@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CHI TIẾT SÁCH</h2>
+<fieldset>
+    <div class="display-label">Mã Loại: @Model.maloai</div>
+    <div class="display-label">Tên sách: @Model.tensach</div>
+    <div class="hinh">
+        <img src="@Model.hinh" />
+    </div>
+    <div class=" display-label">Giá bán: @Model.giaban </div>
+    <div class=" display-label">Ngày cập nhật: @Model.ngaycapnhat </div>
+    <div class=" display-label">Số lượng tồn: @Model.soluongton </div>
+</fieldset>
+@using (Html.BeginForm())
+{
+    <p>
+        @Html.ActionLink("Delete", "Delete", new { id = Model.maloai }) |
+        @Html.ActionLink("Edit", "Edit", new { id = Model.maloai }) |
+        @Html.ActionLink("Back to List", "ListSach")
+    </p>
+}
+
